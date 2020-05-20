@@ -26,10 +26,11 @@ const FriendsList = (props) => {
       .post('/api/friends', friend)
       .then(res => {
         // console.log('postFriend Result:',res.data)
-        setMyFriends([...myFriends, res.data])
+        setMyFriends(res.data)
       })
       .catch(err => console.log(err))
   }
+  console.log(myFriends)
 
   const submitFriend = e => {
     e.preventDefault()
